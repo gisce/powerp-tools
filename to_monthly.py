@@ -1,5 +1,20 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+# This tool creates policy amendments to change the invoicing from bimonthly to monthly
+#
+# Usage:
+# python tg_to_mensual.py --help
+#
+# Example:
+#
+# policies_to_monthly.csv content:
+# policy.id,policy.name
+#
+# OPENERP_DB=XXXX OPENERP_PORT=XXXX OPENERP_USER=XXX OPENERP_PASSWORD=XXX \
+# python to_monthly.py -f policies_to_monthly.csv -l 81 -d 2015-09-01
+#
+
 import os
 import logging
 from datetime import datetime
