@@ -63,8 +63,6 @@ def main(fitxer, lot_facturacio, data_activacio):
         pol_id = int(pol[0])
         try:
             polissa = O.GiscedataPolissa.get(pol_id)
-       
-            polissa.write(vals)
             polissa.send_signal('modcontractual')
             polissa.write(vals_mod)
             wz_crear_mc_obj = O.GiscedataPolissaCrearContracte
@@ -85,6 +83,7 @@ def main(fitxer, lot_facturacio, data_activacio):
                            'data_inici': data_activacio})
                 wiz.action_crear_contracte()
                 logger.info('%s (%s) OK\n' % (pol[1], pol_id))
+                polissa.write(vals)
         except Exception, e:
             logger.error('%s (%s) ERROR actualizando póliza: %s\n' % (
                 pol[1], pol_id, e))
