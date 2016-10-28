@@ -63,6 +63,14 @@ def main(fitxer, lot_facturacio, data_activacio):
         pol_id = int(pol[0])
         try:
             polissa = O.GiscedataPolissa.get(pol_id)
+            if polissa.facturacio == 1:
+                logger.warning(
+                    '{} ({}) WARNING It is already monthly\n'.format(
+                        pol[1],
+                        pol_id
+                    )
+                )
+                continue
             polissa.send_signal('modcontractual')
             polissa.write(vals_mod)
             wz_crear_mc_obj = O.GiscedataPolissaCrearContracte
