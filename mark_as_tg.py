@@ -91,7 +91,7 @@ def main(fitxer, data_activacio, mod_contract=False):
             polissa.send_signal('undo_modcontractual')
 
         sys.stdout.flush()
-	if step_by_step:
+    if step_by_step:
                 sys.stderr.write('Prem una tecla per continuar ...')
                 raw_input()
 
