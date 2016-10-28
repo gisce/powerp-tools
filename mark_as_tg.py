@@ -1,5 +1,19 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
+
+# This tool creates policy amendments to mark policies as remote managed
+#
+# Usage:
+# python mark_as_tg.py --help
+#
+# Example:
+#
+# policies_to_monthly.csv content:
+# policy.id,policy.name
+#
+# OPENERP_DB=XXXX OPENERP_PORT=XXXX OPENERP_USER=XXX OPENERP_PASSWORD=XXX python mark_as_tg.py -f policies_to_tg.csv -d 2015-09-01
+#
+
 import os
 import logging
 from datetime import datetime
