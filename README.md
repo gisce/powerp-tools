@@ -1,2 +1,2 @@
 # powerp-tools
-Lilte tools/scripts to work with powerp
+Little tools/scripts to work with powerp
